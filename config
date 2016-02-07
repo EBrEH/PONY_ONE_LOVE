@@ -157,27 +157,24 @@ new_window      1pixel
 new_float       1pixel
 
 # windows theme
-# class                         border          background      text            indicator
-client.focused                  #4D4D4D         #4D4D4D         #ffffff         #2e9ef4
-client.focused_inactive         #2E2E2E         #5f676a         #ffffff         #484e50
-client.unfocused                #333333         #222222         #888888         #292d2e
-client.urgent                   #2f343a         #900000         #ffffff         #900000
+# class                     border     background text       indicator
+client.focused              #688060    #688060    #303030    #ffcfaf
+client.focused_inactive     #3f3f3f    #3F3F3F    #7f9f7f    #3f3f3f
+client.unfocused            #3f3f3f    #3F3F3F    #DCDCCC    #3f3f3f
+client.urgent               #dca3a3    #dca3a3    #DCDCCC    #3f3f3f
 
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
 bar {
-     status_command i3status -c ~/.config/i3/i3status.conf
-     position                top
-     workspace_buttons       yes
-     tray_output             primary
-     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+    status_command i3status -c ~/.config/i3/i3status.conf
+    position top
+    colors {
+        background #3f3f3f
+        statusline #dcdccc
 
-     colors {
-          background  #2E2E2E
-          statusline  #009084
-
-          focused_workspace               #FFFFFF #2E2E2E
-          active_workspace                #FFFFFF #2E2E2E
-          inactive_workspace              #FFFFFF #2E2E2E
-          urgent_workspace                #FFFFFF #009084
-          
-     }
+        focused_workspace  #93b3a3 #3f3f3f #93b3a3
+        active_workspace   #ffcfaf #3f3f3f #ffcfaf
+        inactive_workspace #636363 #3f3f3f #dcdccc
+        urgent_workspace   #dca3a3 #3f3f3f #dca3a3
+    }
 }
