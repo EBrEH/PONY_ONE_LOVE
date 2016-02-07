@@ -12,7 +12,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -74,29 +74,41 @@ bindsym $mod+a focus parent
 bindsym XF86AudioRaiseVolume exec amixer -c 0 set Headphone 1+
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Headphone 1-
 
+# name the workspace
+set $tag1 "Firefox"
+set $tag2 "Terminal"
+set $tag3 "File Manager"
+set $tag4 "Other"
+set $tag5
+set $tag6
+set $tag7
+set $tag8
+set $tag9
+set $tag10
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $tag1
+bindsym $mod+2 workspace $tag2
+bindsym $mod+3 workspace $tag3
+bindsym $mod+4 workspace $tag4
+bindsym $mod+5 workspace $tag5
+bindsym $mod+6 workspace $tag6
+bindsym $mod+7 workspace $tag7
+bindsym $mod+8 workspace $tag8
+bindsym $mod+9 workspace $tag9
+bindsym $mod+0 workspace $tag10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $tag1
+bindsym $mod+Shift+2 move container to workspace $tag2
+bindsym $mod+Shift+3 move container to workspace $tag3
+bindsym $mod+Shift+4 move container to workspace $tag4
+bindsym $mod+Shift+5 move container to workspace $tag5
+bindsym $mod+Shift+6 move container to workspace $tag6
+bindsym $mod+Shift+7 move container to workspace $tag7
+bindsym $mod+Shift+8 move container to workspace $tag8
+bindsym $mod+Shift+9 move container to workspace $tag9
+bindsym $mod+Shift+0 move container to workspace $tag10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -138,7 +150,7 @@ bindsym XF86Browser exec chromium
 bindsym XF86Computer exec pcmanfm
 
 # fex
-exec feh --bg-scale /home/qwerty/files/Изображения/arch-wallpaper.png
+exec feh --bg-scale /home/qwerty/Files/Изображения/Обои/Pinkie_Pie.jpg
 
 # windows style
 new_window      1pixel
@@ -146,26 +158,26 @@ new_float       1pixel
 
 # windows theme
 # class                         border          background      text            indicator
-client.focused                  #4c7899         #285577         #ffffff         #2e9ef4
-client.focused_inactive         #333333         #5f676a         #ffffff         #484e50
+client.focused                  #4D4D4D         #4D4D4D         #ffffff         #2e9ef4
+client.focused_inactive         #2E2E2E         #5f676a         #ffffff         #484e50
 client.unfocused                #333333         #222222         #888888         #292d2e
 client.urgent                   #2f343a         #900000         #ffffff         #900000
 
 bar {
-        status_command i3status -c ~/.i3/i3status.conf
-        position                top
-        workspace_buttons       yes
-        tray_output             primary
+     status_command i3status -c ~/.config/i3/i3status.conf
+     position                top
+     workspace_buttons       yes
+     tray_output             primary
+     font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
-        font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+     colors {
+          background  #2E2E2E
+          statusline  #009084
 
-        colors {
-                background #2E2E2E
-                statusline #DF3A01
-
-                focused_workspace  #ffffff #DF3A01
-                active_workspace   #ffffff #DF3A01
-                inactive_workspace #888888 #222222
-                urgent_workspace   #ffffff #900000
-        }
+          focused_workspace               #FFFFFF #2E2E2E
+          active_workspace                #FFFFFF #2E2E2E
+          inactive_workspace              #FFFFFF #2E2E2E
+          urgent_workspace                #FFFFFF #009084
+          
+     }
 }
