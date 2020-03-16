@@ -6,13 +6,13 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:URW Gothic L Book 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -146,11 +146,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # start soft
-bindsym XF86Browser exec chromium
-bindsym XF86Computer exec pcmanfm
+bindsym XF86Browser exec firefox
+bindsym XF86Computer exec caja
 
-# fex
-exec feh --bg-scale /home/qwerty/Files/Изображения/Обои/Pinkie_Pie.jpg
+# nitroen
+exec nitrogen --restore
 
 # windows style
 new_window      1pixel
